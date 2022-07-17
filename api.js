@@ -3,9 +3,23 @@ const valor = document.querySelector('#valor');
 const boton = document.querySelector('#botoncito');
 const boton2 = document.querySelector('#botoncito2');
 const boton3 = document.querySelector('#botoncito3');
+const boton4 = document.querySelector('#botoncito4');
+const boton5 = document.querySelector('#botoncito5');
 
+boton5.addEventListener('click',(e) =>{
+    div.innerHTML=("");
+    e.preventDefault();
+    mostrarProductos(20);
+    
+})
+
+boton4.addEventListener('click',(e) =>{
+    e.preventDefault();
+    añadirProducto();
+})
 
 boton.addEventListener('click',(e) =>{
+    div.innerHTML=("");
     e.preventDefault();
     mostrarProducto(valor.value);
 })
@@ -32,6 +46,23 @@ function mostrarProductos(valor){
     for (let i=1;i<=valor;i++){
         mostrarProducto(i)
     }
+}
+
+function añadirProducto() {
+    fetch('https://fakestoreapi.com/products',{
+            method:"POST",
+            body:JSON.stringify(
+                {
+                    title: 'test product',
+                    price: 13.5,
+                    description: 'lorem ipsum set',
+                    image: 'https://i.pravatar.cc',
+                    category: 'electronic'
+                }
+            )
+        })
+            .then(res=>res.json())
+            .then(json=>console.log(json))
 }
 
 //titulo,precio,descripcion,imagen,categoria
@@ -74,4 +105,3 @@ function crearProducto(producto) {
 </div>`)
     div.appendChild(div_2)
     }
-//mostrarProductos(20);

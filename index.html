@@ -10,12 +10,118 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
       <link rel="stylesheet" href="style.css">
 <body>
-    <div class="input-group mb-3">
-        <input type="text" id="valor" class="form-control" placeholder="Search">
-        <button id="botoncito" class="btn btn-success" type="submit">Go</button>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="javascript:void(0)">FakeStoreApi</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a data-bs-toggle="modal" data-bs-target="#myModal3" class="nav-link" href="javascript:void(0)">Add</a>
+          </li>
+          <li class="nav-item">
+            <a data-bs-toggle="modal" data-bs-target="#myModal" class="nav-link" href="javascript:void(0)">Update</a>
+          </li>
+          <li class="nav-item">
+            <a data-bs-toggle="modal" data-bs-target="#myModal2" class="nav-link" href="javascript:void(0)">Delete</a>
+          </li>
+          <li class="nav-item">
+            <a id="botoncito5" class="nav-link" href="javascript:void(0)">List All</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input id="valor" class="form-control me-2" type="text" placeholder="Search one">
+          <button id="botoncito" class="btn btn-primary" type="submit">Search</button>
+        </form>
       </div>
-      <button id="botoncito2" class="btn btn-success" type="submit">Update</button>
-      <button id="botoncito3" class="btn btn-success" type="submit">Delete</button>
+    </div>
+  </nav>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Update or edit product</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body titulo,precio,descripcion,imagen,categoria-->
+      <div class="modal-body">
+        <input class="form-control me-2" type="text" placeholder="Ingresa un titulo para el nuevo producto"><br>
+        <input class="form-control me-2" type="text" placeholder="Ingresa un precio para el nuevo producto"><br>
+        <input class="form-control me-2" type="text" placeholder="Ingresa una descripcion para el nuevo producto"><br>
+        <input class="form-control me-2" type="text" placeholder="Ingresa una categoria para el nuevo producto"><br>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button id="botoncito2" class="btn btn-primary" type="submit" data-bs-dismiss="modal">Done</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="myModal2">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Delete product</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <input class="form-control me-2" type="text" placeholder="Ingresa el id para el producto que desea eliminar"><br>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button id="botoncito3" class="btn btn-primary" type="submit" data-bs-dismiss="modal">Done</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="myModal3">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Add product</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <input class="form-control me-2" type="text" placeholder="Ingresa un titulo para el nuevo producto"><br>
+        <input class="form-control me-2" type="text" placeholder="Ingresa un precio para el nuevo producto"><br>
+        <input class="form-control me-2" type="text" placeholder="Ingresa una descripcion para el nuevo producto"><br>
+        <input class="form-control me-2" type="text" placeholder="Ingresa una categoria para el nuevo producto"><br>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button id="botoncito4" class="btn btn-primary" type="submit" data-bs-dismiss="modal">Done</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
     <div class="Contenedor"></div>
     <script src="api.js"></script>
 </body>
